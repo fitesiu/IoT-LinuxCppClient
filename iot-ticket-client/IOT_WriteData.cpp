@@ -192,7 +192,7 @@ bool IOT_WriteData::ToJSON(Json::Value& json) const
         json["dataType"] = "double";
         break;
     case IOT_long:
-        json["v"] = *((int64_t*)data);
+        json["v"] = static_cast<Json::Int64>( *((int64_t*)data) );
         json["dataType"] = "long";
         break;
     case IOT_bool:
